@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TextoAbierto
 {
-    public partial class Form1 : Form
+    public partial class menuprincipal : Form
     {
-        public Form1()
+        public menuprincipal()
         {
             InitializeComponent();
         }
