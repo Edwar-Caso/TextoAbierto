@@ -16,5 +16,11 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Alumno frm = new Alumno();
+            frm.Show();
+        }
     }
 }
