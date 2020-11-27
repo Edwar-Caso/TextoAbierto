@@ -16,5 +16,12 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
+
+        private void Profesor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

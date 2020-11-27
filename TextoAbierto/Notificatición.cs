@@ -21,5 +21,12 @@ namespace TextoAbierto
         {
 
         }
+
+        private void Notificatición_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
