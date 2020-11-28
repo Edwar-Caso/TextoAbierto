@@ -141,6 +141,7 @@
             this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alumno";
+            this.Load += new System.EventHandler(this.Alumno_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Alumno_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
