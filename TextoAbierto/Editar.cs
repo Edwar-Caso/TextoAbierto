@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TextoAbierto
 {
-    public partial class Presentacion : Form
+    public partial class Editar : Form
     {
-        public Presentacion()
+        public Editar()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
