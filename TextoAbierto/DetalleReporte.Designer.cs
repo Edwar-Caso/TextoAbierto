@@ -30,7 +30,7 @@ namespace TextoAbierto
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleReporte));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnPresentacion = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
@@ -41,6 +41,7 @@ namespace TextoAbierto
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Construcción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDescarga = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,7 +56,7 @@ namespace TextoAbierto
             this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporte.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.Color.LightGray;
-            this.btnReporte.Location = new System.Drawing.Point(544, 43);
+            this.btnReporte.Location = new System.Drawing.Point(543, 40);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(171, 40);
             this.btnReporte.TabIndex = 40;
@@ -72,7 +73,7 @@ namespace TextoAbierto
             this.btnPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPresentacion.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresentacion.ForeColor = System.Drawing.Color.LightGray;
-            this.btnPresentacion.Location = new System.Drawing.Point(367, 43);
+            this.btnPresentacion.Location = new System.Drawing.Point(367, 40);
             this.btnPresentacion.Name = "btnPresentacion";
             this.btnPresentacion.Size = new System.Drawing.Size(171, 40);
             this.btnPresentacion.TabIndex = 39;
@@ -89,7 +90,7 @@ namespace TextoAbierto
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCrear.Location = new System.Drawing.Point(190, 43);
+            this.btnCrear.Location = new System.Drawing.Point(190, 40);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(171, 40);
             this.btnCrear.TabIndex = 38;
@@ -106,7 +107,7 @@ namespace TextoAbierto
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.LightGray;
-            this.btnInicio.Location = new System.Drawing.Point(13, 43);
+            this.btnInicio.Location = new System.Drawing.Point(13, 40);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(171, 40);
             this.btnInicio.TabIndex = 37;
@@ -131,7 +132,7 @@ namespace TextoAbierto
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(694, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(693, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(21, 22);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -144,15 +145,15 @@ namespace TextoAbierto
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -186,12 +187,28 @@ namespace TextoAbierto
             this.btnDescarga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDescarga.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescarga.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDescarga.Location = new System.Drawing.Point(544, 427);
+            this.btnDescarga.Location = new System.Drawing.Point(543, 427);
             this.btnDescarga.Name = "btnDescarga";
             this.btnDescarga.Size = new System.Drawing.Size(171, 40);
             this.btnDescarga.TabIndex = 44;
             this.btnDescarga.Text = "Descargar";
             this.btnDescarga.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.LightGray;
+            this.button1.Location = new System.Drawing.Point(13, 427);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 40);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // DetalleReporte
             // 
@@ -199,6 +216,7 @@ namespace TextoAbierto
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(728, 477);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDescarga);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnMinimizar);
@@ -230,5 +248,6 @@ namespace TextoAbierto
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Construcción;
         private System.Windows.Forms.Button btnDescarga;
+        private System.Windows.Forms.Button button1;
     }
 }
