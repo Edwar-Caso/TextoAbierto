@@ -17,33 +17,16 @@ namespace TextoAbierto
             InitializeComponent();
         }
 
-        private void Profesor_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReporte_Click(object sender, EventArgs e)
-        {
-            Reporte frm = new Reporte();
-            frm.Show();
-        }
-
-        private void btnCrear_Click(object sender, EventArgs e)
+        private void cREARToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TextoAbiertoCrear frm = new TextoAbiertoCrear();
+            frm.MdiParent = this;
             frm.Show();
         }
 
-        private void btnPresentacion_Click(object sender, EventArgs e)
+        private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TextoAbiertoPresentación frm = new TextoAbiertoPresentación();
-            frm.Show();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            menuprincipal frm = new menuprincipal();
-            frm.Show();
+            Application.Exit();
         }
     }
 }
