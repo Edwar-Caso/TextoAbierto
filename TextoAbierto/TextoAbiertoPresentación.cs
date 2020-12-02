@@ -69,7 +69,7 @@ namespace TextoAbierto
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            Reporte frm = new Reporte();
+            TextoAbiertoReporte frm = new TextoAbiertoReporte();
             frm.Show();
             this.WindowState = FormWindowState.Minimized;
         }

@@ -16,7 +16,6 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -24,7 +23,7 @@ namespace TextoAbierto
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -55,9 +54,14 @@ namespace TextoAbierto
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            Reporte frm = new Reporte();
+            TextoAbiertoReporte frm = new TextoAbiertoReporte();
             frm.Show();
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

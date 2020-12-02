@@ -97,11 +97,11 @@
     <Compile Include="Presentacion.Designer.cs">
       <DependentUpon>Presentacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte.cs">
+    <Compile Include="TextoAbiertoReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporte.Designer.cs">
-      <DependentUpon>Reporte.cs</DependentUpon>
+    <Compile Include="TextoAbiertoReporte.Designer.cs">
+      <DependentUpon>TextoAbiertoReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="RespuestaAlumno.cs">
       <SubType>Form</SubType>
@@ -147,8 +147,8 @@
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte.resx">
-      <DependentUpon>Reporte.cs</DependentUpon>
+    <EmbeddedResource Include="TextoAbiertoReporte.resx">
+      <DependentUpon>TextoAbiertoReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RespuestaAlumno.resx">
       <DependentUpon>RespuestaAlumno.cs</DependentUpon>

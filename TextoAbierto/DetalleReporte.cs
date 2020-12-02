@@ -24,7 +24,7 @@ namespace TextoAbierto
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -50,9 +50,14 @@ namespace TextoAbierto
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            Reporte frm = new Reporte();
+            TextoAbiertoReporte frm = new TextoAbiertoReporte();
             frm.Show();
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

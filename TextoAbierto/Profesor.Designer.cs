@@ -49,7 +49,7 @@ namespace TextoAbierto
             this.sALIRToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1080, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1100, 28);
             this.menuStrip1.TabIndex = 32;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,12 +71,14 @@ namespace TextoAbierto
             this.pRESENTACIÒNToolStripMenuItem.Name = "pRESENTACIÒNToolStripMenuItem";
             this.pRESENTACIÒNToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.pRESENTACIÒNToolStripMenuItem.Text = "PRESENTACIÒN";
+            this.pRESENTACIÒNToolStripMenuItem.Click += new System.EventHandler(this.pRESENTACIÒNToolStripMenuItem_Click);
             // 
             // rEPORTEToolStripMenuItem
             // 
             this.rEPORTEToolStripMenuItem.Name = "rEPORTEToolStripMenuItem";
             this.rEPORTEToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.rEPORTEToolStripMenuItem.Text = "REPORTE";
+            this.rEPORTEToolStripMenuItem.Click += new System.EventHandler(this.rEPORTEToolStripMenuItem_Click);
             // 
             // sALIRToolStripMenuItem
             // 
@@ -89,9 +91,11 @@ namespace TextoAbierto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1080, 720);
+            this.ClientSize = new System.Drawing.Size(1100, 740);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

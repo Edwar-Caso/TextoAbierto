@@ -28,5 +28,19 @@ namespace TextoAbierto
         {
             Application.Exit();
         }
+
+        private void pRESENTACIÒNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TextoAbiertoPresentación frm = new TextoAbiertoPresentación();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void rEPORTEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TextoAbiertoReporte frm = new TextoAbiertoReporte();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

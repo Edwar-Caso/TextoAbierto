@@ -54,29 +54,31 @@ namespace TextoAbierto
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCancelar.Location = new System.Drawing.Point(829, 660);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(827, 620);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(228, 49);
             this.btnCancelar.TabIndex = 39;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // picboxImagen
             // 
-            this.picboxImagen.Location = new System.Drawing.Point(527, 383);
-            this.picboxImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picboxImagen.Location = new System.Drawing.Point(526, 327);
+            this.picboxImagen.Margin = new System.Windows.Forms.Padding(4);
             this.picboxImagen.Name = "picboxImagen";
             this.picboxImagen.Size = new System.Drawing.Size(531, 256);
             this.picboxImagen.TabIndex = 38;
             this.picboxImagen.TabStop = false;
+            this.picboxImagen.Click += new System.EventHandler(this.picboxImagen_Click);
             // 
             // lblImagen
             // 
             this.lblImagen.AutoSize = true;
             this.lblImagen.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImagen.ForeColor = System.Drawing.Color.Transparent;
-            this.lblImagen.Location = new System.Drawing.Point(520, 345);
+            this.lblImagen.Location = new System.Drawing.Point(521, 288);
             this.lblImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImagen.Name = "lblImagen";
             this.lblImagen.Size = new System.Drawing.Size(165, 35);
@@ -86,8 +88,8 @@ namespace TextoAbierto
             // txtboxDescripcion
             // 
             this.txtboxDescripcion.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxDescripcion.Location = new System.Drawing.Point(527, 258);
-            this.txtboxDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxDescripcion.Location = new System.Drawing.Point(526, 176);
+            this.txtboxDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxDescripcion.Multiline = true;
             this.txtboxDescripcion.Name = "txtboxDescripcion";
             this.txtboxDescripcion.Size = new System.Drawing.Size(529, 67);
@@ -97,8 +99,8 @@ namespace TextoAbierto
             // txtboxPregunta
             // 
             this.txtboxPregunta.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxPregunta.Location = new System.Drawing.Point(527, 169);
-            this.txtboxPregunta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxPregunta.Location = new System.Drawing.Point(526, 50);
+            this.txtboxPregunta.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxPregunta.Name = "txtboxPregunta";
             this.txtboxPregunta.Size = new System.Drawing.Size(529, 35);
             this.txtboxPregunta.TabIndex = 35;
@@ -108,7 +110,7 @@ namespace TextoAbierto
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.Transparent;
-            this.lblDescripcion.Location = new System.Drawing.Point(520, 220);
+            this.lblDescripcion.Location = new System.Drawing.Point(520, 137);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(244, 35);
@@ -120,7 +122,7 @@ namespace TextoAbierto
             this.lblPregunta.AutoSize = true;
             this.lblPregunta.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPregunta.ForeColor = System.Drawing.Color.Transparent;
-            this.lblPregunta.Location = new System.Drawing.Point(520, 130);
+            this.lblPregunta.Location = new System.Drawing.Point(521, 11);
             this.lblPregunta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPregunta.Name = "lblPregunta";
             this.lblPregunta.Size = new System.Drawing.Size(231, 35);
@@ -136,8 +138,8 @@ namespace TextoAbierto
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnGuardar.Location = new System.Drawing.Point(527, 660);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(524, 620);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(228, 49);
             this.btnGuardar.TabIndex = 32;
@@ -151,7 +153,7 @@ namespace TextoAbierto
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtboxCodigo);
             this.panel1.Controls.Add(this.lblCodigo);
-            this.panel1.Location = new System.Drawing.Point(21, 130);
+            this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(476, 587);
@@ -176,7 +178,7 @@ namespace TextoAbierto
             this.txtboxCodigo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxCodigo.ForeColor = System.Drawing.Color.Transparent;
             this.txtboxCodigo.Location = new System.Drawing.Point(357, 17);
-            this.txtboxCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxCodigo.Name = "txtboxCodigo";
             this.txtboxCodigo.Size = new System.Drawing.Size(95, 22);
             this.txtboxCodigo.TabIndex = 45;
@@ -214,6 +216,7 @@ namespace TextoAbierto
             this.Name = "TextoAbiertoCrear";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TextoAbierto";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.picboxImagen)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
