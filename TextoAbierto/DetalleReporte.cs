@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TextoAbierto
 {
-    public partial class TextoAbiertoCrear : Form
+    public partial class DetalleReporte : Form
     {
-        public TextoAbiertoCrear()
+        public DetalleReporte()
         {
             InitializeComponent();
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -27,16 +22,9 @@ namespace TextoAbierto
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void txtboxDescripcion_TextChanged(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Profesor frm = new Profesor();
-            frm.Show();
-            this.WindowState = FormWindowState.Minimized;
+            Application.Exit();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

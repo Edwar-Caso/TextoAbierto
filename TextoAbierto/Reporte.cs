@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TextoAbierto
 {
-    public partial class TextoAbiertoCrear : Form
+    public partial class Reporte : Form
     {
-        public TextoAbiertoCrear()
+        public Reporte()
         {
             InitializeComponent();
         }
@@ -22,21 +22,10 @@ namespace TextoAbierto
             Application.Exit();
         }
 
-        private void btnMinimizar_Click(object sender, EventArgs e)
+        private void btnVer_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void txtboxDescripcion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Profesor frm = new Profesor();
+            DetalleReporte frm = new DetalleReporte();
             frm.Show();
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

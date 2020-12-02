@@ -16,5 +16,22 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            TextoAbiertoPresentación fmr = new TextoAbiertoPresentación();
+            fmr.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

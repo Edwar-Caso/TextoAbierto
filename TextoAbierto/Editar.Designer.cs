@@ -49,30 +49,32 @@ namespace TextoAbierto
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(400, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(380, 9);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(22, 32);
+            this.btnMinimizar.Size = new System.Drawing.Size(22, 26);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 25;
             this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(428, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(416, 9);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(21, 26);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 24;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblPregunta
             // 
             this.lblPregunta.AutoSize = true;
             this.lblPregunta.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPregunta.ForeColor = System.Drawing.Color.Transparent;
-            this.lblPregunta.Location = new System.Drawing.Point(27, 49);
+            this.lblPregunta.Location = new System.Drawing.Point(12, 39);
             this.lblPregunta.Name = "lblPregunta";
             this.lblPregunta.Size = new System.Drawing.Size(247, 37);
             this.lblPregunta.TabIndex = 23;
@@ -87,19 +89,20 @@ namespace TextoAbierto
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnGuardar.Location = new System.Drawing.Point(34, 557);
+            this.btnGuardar.Location = new System.Drawing.Point(22, 493);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(171, 40);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.Transparent;
-            this.lblDescripcion.Location = new System.Drawing.Point(27, 153);
+            this.lblDescripcion.Location = new System.Drawing.Point(12, 127);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(259, 37);
             this.lblDescripcion.TabIndex = 26;
@@ -108,19 +111,19 @@ namespace TextoAbierto
             // txtboxPregunta
             // 
             this.txtboxPregunta.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxPregunta.Location = new System.Drawing.Point(34, 89);
+            this.txtboxPregunta.Location = new System.Drawing.Point(19, 79);
             this.txtboxPregunta.Name = "txtboxPregunta";
-            this.txtboxPregunta.Size = new System.Drawing.Size(398, 30);
+            this.txtboxPregunta.Size = new System.Drawing.Size(418, 30);
             this.txtboxPregunta.TabIndex = 27;
             this.txtboxPregunta.Text = "¿Cuál es su nombre?";
             // 
             // txtboxDescripcion
             // 
             this.txtboxDescripcion.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxDescripcion.Location = new System.Drawing.Point(34, 193);
+            this.txtboxDescripcion.Location = new System.Drawing.Point(22, 167);
             this.txtboxDescripcion.Multiline = true;
             this.txtboxDescripcion.Name = "txtboxDescripcion";
-            this.txtboxDescripcion.Size = new System.Drawing.Size(398, 53);
+            this.txtboxDescripcion.Size = new System.Drawing.Size(415, 53);
             this.txtboxDescripcion.TabIndex = 28;
             this.txtboxDescripcion.Text = "Con esta pregunta conoceremos el nombre de los estudiantes";
             // 
@@ -129,7 +132,7 @@ namespace TextoAbierto
             this.lblImagen.AutoSize = true;
             this.lblImagen.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImagen.ForeColor = System.Drawing.Color.Transparent;
-            this.lblImagen.Location = new System.Drawing.Point(27, 279);
+            this.lblImagen.Location = new System.Drawing.Point(15, 239);
             this.lblImagen.Name = "lblImagen";
             this.lblImagen.Size = new System.Drawing.Size(174, 37);
             this.lblImagen.TabIndex = 29;
@@ -137,9 +140,9 @@ namespace TextoAbierto
             // 
             // picboxImagen
             // 
-            this.picboxImagen.Location = new System.Drawing.Point(34, 319);
+            this.picboxImagen.Location = new System.Drawing.Point(22, 279);
             this.picboxImagen.Name = "picboxImagen";
-            this.picboxImagen.Size = new System.Drawing.Size(398, 208);
+            this.picboxImagen.Size = new System.Drawing.Size(415, 208);
             this.picboxImagen.TabIndex = 30;
             this.picboxImagen.TabStop = false;
             // 
@@ -152,7 +155,7 @@ namespace TextoAbierto
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCancelar.Location = new System.Drawing.Point(261, 557);
+            this.btnCancelar.Location = new System.Drawing.Point(266, 493);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(171, 40);
             this.btnCancelar.TabIndex = 31;
@@ -164,7 +167,7 @@ namespace TextoAbierto
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(461, 614);
+            this.ClientSize = new System.Drawing.Size(461, 545);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.picboxImagen);
             this.Controls.Add(this.lblImagen);
@@ -177,7 +180,6 @@ namespace TextoAbierto
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Editar";
-            this.Opacity = 0.85D;
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar";

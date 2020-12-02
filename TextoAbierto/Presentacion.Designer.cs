@@ -52,12 +52,13 @@ namespace TextoAbierto
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.LightGray;
-            this.btnInicio.Location = new System.Drawing.Point(3, 34);
+            this.btnInicio.Location = new System.Drawing.Point(12, 34);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(171, 40);
             this.btnInicio.TabIndex = 15;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // btnCrear
             // 
@@ -68,12 +69,13 @@ namespace TextoAbierto
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCrear.Location = new System.Drawing.Point(180, 34);
+            this.btnCrear.Location = new System.Drawing.Point(189, 34);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(171, 40);
             this.btnCrear.TabIndex = 16;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // btnPresentacion
             // 
@@ -84,12 +86,13 @@ namespace TextoAbierto
             this.btnPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPresentacion.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresentacion.ForeColor = System.Drawing.Color.LightGray;
-            this.btnPresentacion.Location = new System.Drawing.Point(357, 34);
+            this.btnPresentacion.Location = new System.Drawing.Point(366, 34);
             this.btnPresentacion.Name = "btnPresentacion";
             this.btnPresentacion.Size = new System.Drawing.Size(171, 40);
             this.btnPresentacion.TabIndex = 17;
             this.btnPresentacion.Text = "Presentacion";
             this.btnPresentacion.UseVisualStyleBackColor = false;
+            this.btnPresentacion.Click += new System.EventHandler(this.btnPresentacion_Click);
             // 
             // btnReporte
             // 
@@ -100,12 +103,13 @@ namespace TextoAbierto
             this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporte.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.Color.LightGray;
-            this.btnReporte.Location = new System.Drawing.Point(534, 34);
+            this.btnReporte.Location = new System.Drawing.Point(545, 34);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(171, 40);
             this.btnReporte.TabIndex = 18;
             this.btnReporte.Text = "Reporte";
             this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // lblPregunta
             // 
@@ -129,6 +133,7 @@ namespace TextoAbierto
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 21;
             this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnCerrar
             // 
@@ -140,6 +145,7 @@ namespace TextoAbierto
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 20;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // txtboxCodigo
             // 
@@ -158,7 +164,7 @@ namespace TextoAbierto
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.ForeColor = System.Drawing.Color.Transparent;
-            this.lblCodigo.Location = new System.Drawing.Point(197, 83);
+            this.lblCodigo.Location = new System.Drawing.Point(191, 83);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(258, 23);
             this.lblCodigo.TabIndex = 23;
@@ -169,7 +175,7 @@ namespace TextoAbierto
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(709, 450);
+            this.ClientSize = new System.Drawing.Size(728, 450);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.txtboxCodigo);
             this.Controls.Add(this.btnMinimizar);
@@ -181,7 +187,6 @@ namespace TextoAbierto
             this.Controls.Add(this.btnInicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Presentacion";
-            this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPresen";
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();

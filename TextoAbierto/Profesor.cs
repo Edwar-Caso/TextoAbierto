@@ -22,6 +22,28 @@ namespace TextoAbierto
 
         }
 
-        
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            Reporte frm = new Reporte();
+            frm.Show();
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            TextoAbiertoCrear frm = new TextoAbiertoCrear();
+            frm.Show();
+        }
+
+        private void btnPresentacion_Click(object sender, EventArgs e)
+        {
+            TextoAbiertoPresentación frm = new TextoAbiertoPresentación();
+            frm.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            menuprincipal frm = new menuprincipal();
+            frm.Show();
+        }
     }
 }

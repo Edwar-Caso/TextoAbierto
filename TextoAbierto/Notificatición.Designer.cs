@@ -69,6 +69,7 @@ namespace TextoAbierto
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btncerrar.TabIndex = 11;
             this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // Notificatición
             // 
@@ -81,6 +82,7 @@ namespace TextoAbierto
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Notificatición";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Notificatición";
             this.Load += new System.EventHandler(this.Notificatición_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

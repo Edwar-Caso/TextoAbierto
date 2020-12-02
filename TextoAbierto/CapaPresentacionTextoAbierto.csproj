@@ -67,6 +67,12 @@
     <Compile Include="Alumno.Designer.cs">
       <DependentUpon>Alumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetalleReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleReporte.Designer.cs">
+      <DependentUpon>DetalleReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,18 @@
     <Compile Include="Presentacion.Designer.cs">
       <DependentUpon>Presentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RespuestaAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RespuestaAlumno.Designer.cs">
+      <DependentUpon>RespuestaAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextoAbiertoPresentación.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +132,9 @@
     <EmbeddedResource Include="Alumno.resx">
       <DependentUpon>Alumno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetalleReporte.resx">
+      <DependentUpon>DetalleReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RespuestaAlumno.resx">
+      <DependentUpon>RespuestaAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextoAbiertoPresentación.resx">
       <DependentUpon>TextoAbiertoPresentación.cs</DependentUpon>

@@ -78,7 +78,15 @@ namespace TextoAbierto
 
         private void Alumno_Load(object sender, EventArgs e)
         {
+            
 
+        }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            RespuestaAlumno frm = new RespuestaAlumno();
+            frm.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

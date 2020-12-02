@@ -28,6 +28,7 @@ namespace TextoAbierto
         {
             Alumno frm = new Alumno();
             frm.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btncerrar_Click(object sender, EventArgs e)

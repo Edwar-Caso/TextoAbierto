@@ -27,6 +27,9 @@ namespace TextoAbierto
 
         }
 
-        
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
