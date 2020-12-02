@@ -40,7 +40,7 @@ namespace CapaDatosTextoAbierto
             {
                 cnx.Open();
                 const string sqlQuery =
-                    "UPDATE Presentacion SET Id_cuestionario = @Id_Presentacion, pregunta = @pregunta, Descripcion = @descripcion, imagen = @imagen WHERE Id_Presentacion = @Id_Presentacion";
+                    "UPDATE Presentacion SET Id_cuestionario = @Id_Cuestionario, pregunta = @pregunta, Descripcion = @descripcion, imagen = @imagen WHERE Id_Presentacion = @Id_Presentacion";
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, cnx))
                 {
                     cmd.Parameters.AddWithValue("@Id_Presentacion", Dpresentacion.Id_presentacion);

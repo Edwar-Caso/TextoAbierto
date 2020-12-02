@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CustionarioN.cs" />
+    <Compile Include="PresentacionN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteN.cs" />
+    <Compile Include="RespuestaN.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatosTextoAbierto\CapaDatosTextoAbierto.csproj">
