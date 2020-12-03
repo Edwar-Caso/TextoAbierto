@@ -8,7 +8,7 @@ using CapaEntidadesTextoAbierto;
 
 namespace CapaNegocioTextoAbierto
 {
-    class CustionarioN
+    public class CuestionarioN
     {
         private CuestionarioDatos cuestionarioD = new CuestionarioDatos();
        

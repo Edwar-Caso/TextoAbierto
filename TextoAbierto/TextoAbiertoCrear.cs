@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidadesTextoAbierto;
+using CapaNegocioTextoAbierto;
 
 namespace TextoAbierto
 {
@@ -16,6 +18,80 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
+        private Cuestionario cuestionario;
+        private readonly CuestionarioN cuestionarioN = new CuestionarioN();
+
+        private void Guardar()
+        {
+            try
+            {
+                if (cuestionario == null) cuestionario = new Cuestionario();
+
+                cuestionario.Id_Cuestionario = Convert.ToInt32(lblCodigo.Text);
+                cuestionario.pregunta = txtPregunta.Text;
+                cuestionario.descripcion = txtDescripcion.Text;
+                cuestionario.imagen = Convert.ToByte(boxImagen.Image);
+
+                cuestionarioN.Registrar(cuestionario);
+
+                if (cuestionarioN.stringBuilder.Length != 0)
+                {
+                    MessageBox.Show(cuestionarioN.stringBuilder.ToString(), "Para continuar:");
+                }
+                else
+                {
+                    MessageBox.Show("Producto registrado/actualizado con éxito");
+
+                    //TraerTodos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+
+        /*
+        private void TraerTodos()
+        {
+            List<Cuestionario> cuestionario = cuestionarioN.Todos();
+
+            if (cuestionario.Count > 0)
+            {
+                
+                dgvDatos.AutoGenerateColumns = false;
+                dgvDatos.DataSource = cuestionario;
+                dgvDatos.Columns["columnId"].DataPropertyName = "Id";
+                dgvDatos.Columns["columnDescripcion"].DataPropertyName = "Pregunta";
+      
+                
+            }
+            else
+                MessageBox.Show("No existen registros");
+        }
+        */
+
+        private void Rellenar(int id_cuestionario)
+        {
+            try
+            {
+                cuestionario = cuestionarioN.TraerPorId(id_cuestionario);
+
+                if (cuestionario != null)
+                {
+                    labelPre.Text = cuestionario.pregunta;
+                    labelDes.Text = cuestionario.descripcion;
+                    //pictureBoxIm.Image = Convert.ToByte(cuestionario.imagen);
+                }
+                else
+                    MessageBox.Show("El registro solicitado no existe");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -27,15 +103,12 @@ namespace TextoAbierto
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void txtboxDescripcion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Profesor frm = new Profesor();
             frm.Show();
+            Guardar();
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -67,14 +140,25 @@ namespace TextoAbierto
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void picboxImagen_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string imagen = openFileDialog1.FileName;
+                    boxImagen.Image = Image.FromFile(imagen);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+            }
         }
     }
 }
