@@ -10,7 +10,7 @@ namespace CapaNegocioTextoAbierto
 {
     public class CuestionarioN
     {
-        private CuestionarioDatos cuestionarioD = new CuestionarioDatos();
+        private PreguntaDatos cuestionarioD = new PreguntaDatos();
        
         public readonly StringBuilder stringBuilder = new StringBuilder();
 
