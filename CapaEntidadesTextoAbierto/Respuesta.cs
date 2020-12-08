@@ -9,8 +9,8 @@ namespace CapaEntidadesTextoAbierto
      public class Respuesta
     {
         public int Id_respuesta { get; set; }
-        public int Id_cuestionario { get; set; }
-        public string nombre_alumno { get; set; }
+        public int IdPregunta { get; set; }
+        public string IdAlumno { get; set; }
         public string respuesta { get; set; }
 
     }

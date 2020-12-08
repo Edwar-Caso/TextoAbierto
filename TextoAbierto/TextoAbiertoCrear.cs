@@ -18,14 +18,14 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
-        private Cuestionario cuestionario;
+        private Pregunta cuestionario;
         private readonly CuestionarioN cuestionarioN = new CuestionarioN();
 
         private void Guardar()
         {
             try
             {
-                if (cuestionario == null) cuestionario = new Cuestionario();
+                if (cuestionario == null) cuestionario = new Pregunta();
 
                 cuestionario.Id_Cuestionario = Convert.ToInt32(lblCodigo.Text);
                 cuestionario.pregunta = txtPregunta.Text;

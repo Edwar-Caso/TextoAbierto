@@ -14,7 +14,7 @@ namespace CapaNegocioTextoAbierto
        
         public readonly StringBuilder stringBuilder = new StringBuilder();
 
-        public void Registrar(Cuestionario cuestionario)
+        public void Registrar(Pregunta cuestionario)
         {
             if (Validar(cuestionario))
             {
@@ -28,7 +28,7 @@ namespace CapaNegocioTextoAbierto
             }
         }
 
-        public Cuestionario TraerPorId(int Id_Cuestionario)
+        public Pregunta TraerPorId(int Id_Cuestionario)
         {
             stringBuilder.Clear();
 
@@ -53,7 +53,7 @@ namespace CapaNegocioTextoAbierto
             }
         }
 
-        private bool Validar(Cuestionario cuestionario)
+        private bool Validar(Pregunta cuestionario)
         {
             stringBuilder.Clear();
 

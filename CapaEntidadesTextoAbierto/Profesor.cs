@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaEntidadesTextoAbierto
 {
-    public class Reporte
+    public class Profesor
     {
-        public int IdReporte { get; set; }
-        public int IdPregunta { get; set; }
-        public string pregunta { get; set; }
+        public int IdProfesor { get; set; }
+        public string proNombre { get; set; }
     }
 }

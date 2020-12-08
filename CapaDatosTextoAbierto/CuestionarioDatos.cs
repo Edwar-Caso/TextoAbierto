@@ -11,7 +11,7 @@ namespace CapaDatosTextoAbierto
 {
     public class CuestionarioDatos
     {
-        public void Insertar(Cuestionario Dcuestionario)
+        public void Insertar(Pregunta Dcuestionario)
         {
             using (SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["cnnString"].ToString()))
             {
@@ -33,7 +33,7 @@ namespace CapaDatosTextoAbierto
 
         }
 
-        public void Actualizar(Cuestionario Dcuestionario)
+        public void Actualizar(Pregunta Dcuestionario)
         {
             using (SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["cnnString"].ToString()))
             {
@@ -71,7 +71,7 @@ namespace CapaDatosTextoAbierto
 
         }
 
-        public Cuestionario GetByid(int Id_Cuestionario)
+        public Pregunta GetByid(int Id_Cuestionario)
         {
             using (SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["cnnString"].ToString()))
             {
@@ -85,7 +85,7 @@ namespace CapaDatosTextoAbierto
                     SqlDataReader dataReader = cmd.ExecuteReader();
                     if (dataReader.Read())
                     {
-                        Cuestionario Lcuestionario = new Cuestionario
+                        Pregunta Lcuestionario = new Pregunta
                         {
                             Id_Cuestionario = Convert.ToInt32(dataReader["Id_Cuestionario"]),
                             pregunta = Convert.ToString(dataReader["pregunta"]),
