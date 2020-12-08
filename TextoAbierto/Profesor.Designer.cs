@@ -103,6 +103,7 @@ namespace TextoAbierto
             this.Name = "Profesor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presentación";
+            this.Load += new System.EventHandler(this.Profesor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

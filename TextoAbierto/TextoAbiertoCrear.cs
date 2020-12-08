@@ -8,7 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidadesTextoAbierto;
-using CapaNegocioTextoAbierto;
+using FireSharp.Config;
+using FireSharp.Response;
+using FireSharp.Interfaces;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace TextoAbierto
 {
@@ -18,81 +22,14 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
-        private Cuestionario cuestionario;
-        private readonly CuestionarioN cuestionarioN = new CuestionarioN();
 
-        private void Guardar()
+        IFirebaseConfig fcon = new FirebaseConfig()
         {
-            try
-            {
-                if (cuestionario == null) cuestionario = new Cuestionario();
+            AuthSecret = "FhXmCLLu1tunV9tTEFOlJmWsKs7Kc4mRDM3u4qJ4",
+            BasePath = "https://textoabierto-3fb1a-default-rtdb.firebaseio.com/"
+        }; // Wilder Autrentificar la base de datos
 
-                cuestionario.Id_Cuestionario = Convert.ToInt32(lblCodigo.Text);
-                cuestionario.pregunta = txtPregunta.Text;
-                cuestionario.descripcion = txtDescripcion.Text;
-                cuestionario.imagen = Convert.ToByte(boxImagen.Image);
-
-                cuestionarioN.Registrar(cuestionario);
-
-                if (cuestionarioN.stringBuilder.Length != 0)
-                {
-                    MessageBox.Show(cuestionarioN.stringBuilder.ToString(), "Para continuar:");
-                }
-                else
-                {
-                    MessageBox.Show("Producto registrado/actualizado con éxito");
-
-                    //TraerTodos();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
-            }
-        }
-
-        /*
-        private void TraerTodos()
-        {
-            List<Cuestionario> cuestionario = cuestionarioN.Todos();
-
-            if (cuestionario.Count > 0)
-            {
-                
-                dgvDatos.AutoGenerateColumns = false;
-                dgvDatos.DataSource = cuestionario;
-                dgvDatos.Columns["columnId"].DataPropertyName = "Id";
-                dgvDatos.Columns["columnDescripcion"].DataPropertyName = "Pregunta";
-      
-                
-            }
-            else
-                MessageBox.Show("No existen registros");
-        }
-        */
-
-        private void Rellenar(int id_cuestionario)
-        {
-            try
-            {
-                cuestionario = cuestionarioN.TraerPorId(id_cuestionario);
-
-                if (cuestionario != null)
-                {
-                    labelPre.Text = cuestionario.pregunta;
-                    labelDes.Text = cuestionario.descripcion;
-                    //pictureBoxIm.Image = Convert.ToByte(cuestionario.imagen);
-                }
-                else
-                    MessageBox.Show("El registro solicitado no existe");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
-            }
-        }
-
-
+        IFirebaseClient client;
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -103,13 +40,52 @@ namespace TextoAbierto
             this.WindowState = FormWindowState.Minimized;
         }
 
-
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_Click(object sender, EventArgs e)
         {
-            Profesor frm = new Profesor();
-            frm.Show();
-            Guardar();
-            this.WindowState = FormWindowState.Minimized;
+            //insertar codigo aleatorio
+            Random codigoAleatorio = new Random();
+            int intervalo = codigoAleatorio.Next(10000, 99999);
+            String interv = Convert.ToString(intervalo);
+            lblCodigo.Text = interv;
+
+            //insertar imagen
+            MemoryStream flujoMemoria = new MemoryStream();
+            boxImagen.Image.Save(flujoMemoria, ImageFormat.Jpeg);
+
+            byte[] array = flujoMemoria.GetBuffer();
+            string salida = Convert.ToBase64String(array);
+            var dato = new Cuestionario
+            {
+                imagen = salida
+            };
+            
+            FirebaseResponse respuesta = await client.GetAsync("contador/nodo");
+            datosFirebase obtenerDato = respuesta.ResultAs<datosFirebase>();
+
+            //Almacenar datos a firebase
+            var cuestion = new Cuestionario()
+            {
+                id = (Convert.ToInt32(obtenerDato.cont) + 1).ToString(),
+                numeroAleatorio = lblCodigo.Text,
+                pregunta = txtPregunta.Text,
+                descripcion = txtDescripcion.Text,
+                imagen = Convert.ToBase64String(array)  
+            };
+            SetResponse response = await client.SetAsync("Cuestionario/" + lblCodigo.Text, cuestion);
+            Cuestionario resultado = response.ResultAs<Cuestionario>();
+            
+            var obj = new datosFirebase
+            {
+                cont = (Convert.ToInt32(obtenerDato.cont) +1).ToString()
+            };
+            SetResponse response1 = await client.SetAsync("contador/nodo", obj);
+
+            MessageBox.Show("Ingreso de datos satisfactorio");
+
+            //mostrar en la pantalla
+            lblMostrarPregunta.Text = txtPregunta.Text;
+            lblMostrarDescripcion.Text = txtDescripcion.Text;
+            pictBoxMostrarIm.Image = boxImagen.Image;
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -121,6 +97,7 @@ namespace TextoAbierto
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            //Abrir ventana de crear
             TextoAbiertoCrear frm = new TextoAbiertoCrear();
             frm.Show();
             this.WindowState = FormWindowState.Minimized;
@@ -128,6 +105,7 @@ namespace TextoAbierto
 
         private void btnPresentacion_Click(object sender, EventArgs e)
         {
+            //Abrir ventana de presentacion
             TextoAbiertoPresentación frm = new TextoAbiertoPresentación();
             frm.Show();
             this.WindowState = FormWindowState.Minimized;
@@ -135,6 +113,7 @@ namespace TextoAbierto
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
+            //Abrir ventana de reporte
             TextoAbiertoReporte frm = new TextoAbiertoReporte();
             frm.Show();
             this.WindowState = FormWindowState.Minimized;
@@ -147,18 +126,60 @@ namespace TextoAbierto
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            //subir un archivo
+            OpenFileDialog selecionaImagen = new OpenFileDialog();
+            selecionaImagen.Title = "Selecionar Imagen";
+            selecionaImagen.Filter = "Imagenes|*.jpg;*png";
+            selecionaImagen.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            if(openFileImage.ShowDialog()==DialogResult.OK)
+            boxImagen.Image = Image.FromFile(openFileImage.FileName);
+        }
+
+        private void txtPregunta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextoAbiertoCrear_Load(object sender, EventArgs e)
+        {
             try
             {
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    string imagen = openFileDialog1.FileName;
-                    boxImagen.Image = Image.FromFile(imagen);
-                }
+                client = new FireSharp.FirebaseClient(fcon);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+                MessageBox.Show("Tienes problemas con la conexion a internet, verifique su conexion");
             }
+        } //wilder error de conexion a internet
+
+        private void boxImagen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCodigo_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lbldCodigo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

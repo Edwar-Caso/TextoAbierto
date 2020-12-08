@@ -38,16 +38,18 @@ namespace TextoAbierto
             this.lblPregunta = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxIm = new System.Windows.Forms.PictureBox();
+            this.pictBoxMostrarIm = new System.Windows.Forms.PictureBox();
             this.labelDes = new System.Windows.Forms.Label();
             this.labelPre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.TextBox();
             this.lbldCodigo = new System.Windows.Forms.Label();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileImage = new System.Windows.Forms.OpenFileDialog();
+            this.lblMostrarPregunta = new System.Windows.Forms.Label();
+            this.lblMostrarDescripcion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.boxImagen)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxMostrarIm)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -77,6 +79,7 @@ namespace TextoAbierto
             this.boxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.boxImagen.TabIndex = 38;
             this.boxImagen.TabStop = false;
+            this.boxImagen.Click += new System.EventHandler(this.boxImagen_Click);
             // 
             // lblImagen
             // 
@@ -99,6 +102,7 @@ namespace TextoAbierto
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(529, 67);
             this.txtDescripcion.TabIndex = 36;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // txtPregunta
             // 
@@ -108,6 +112,7 @@ namespace TextoAbierto
             this.txtPregunta.Name = "txtPregunta";
             this.txtPregunta.Size = new System.Drawing.Size(529, 35);
             this.txtPregunta.TabIndex = 35;
+            this.txtPregunta.TextChanged += new System.EventHandler(this.txtPregunta_TextChanged);
             // 
             // lblDescripcion
             // 
@@ -154,7 +159,9 @@ namespace TextoAbierto
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.panel1.Controls.Add(this.pictureBoxIm);
+            this.panel1.Controls.Add(this.lblMostrarDescripcion);
+            this.panel1.Controls.Add(this.lblMostrarPregunta);
+            this.panel1.Controls.Add(this.pictBoxMostrarIm);
             this.panel1.Controls.Add(this.labelDes);
             this.panel1.Controls.Add(this.labelPre);
             this.panel1.Controls.Add(this.lblCodigo);
@@ -162,16 +169,17 @@ namespace TextoAbierto
             this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(476, 587);
+            this.panel1.Size = new System.Drawing.Size(501, 587);
             this.panel1.TabIndex = 43;
             // 
-            // pictureBoxIm
+            // pictBoxMostrarIm
             // 
-            this.pictureBoxIm.Location = new System.Drawing.Point(27, 375);
-            this.pictureBoxIm.Name = "pictureBoxIm";
-            this.pictureBoxIm.Size = new System.Drawing.Size(413, 197);
-            this.pictureBoxIm.TabIndex = 48;
-            this.pictureBoxIm.TabStop = false;
+            this.pictBoxMostrarIm.Location = new System.Drawing.Point(13, 297);
+            this.pictBoxMostrarIm.Name = "pictBoxMostrarIm";
+            this.pictBoxMostrarIm.Size = new System.Drawing.Size(476, 245);
+            this.pictBoxMostrarIm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictBoxMostrarIm.TabIndex = 48;
+            this.pictBoxMostrarIm.TabStop = false;
             // 
             // labelDes
             // 
@@ -200,24 +208,26 @@ namespace TextoAbierto
             this.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.ForeColor = System.Drawing.Color.Transparent;
-            this.lblCodigo.Location = new System.Drawing.Point(315, 51);
+            this.lblCodigo.Location = new System.Drawing.Point(272, 22);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(157, 22);
             this.lblCodigo.TabIndex = 45;
             this.lblCodigo.Text = "Código a generar";
+            this.lblCodigo.TextChanged += new System.EventHandler(this.lblCodigo_TextChanged);
             // 
             // lbldCodigo
             // 
             this.lbldCodigo.AutoSize = true;
-            this.lbldCodigo.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldCodigo.Font = new System.Drawing.Font("Segoe Print", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldCodigo.ForeColor = System.Drawing.Color.Transparent;
-            this.lbldCodigo.Location = new System.Drawing.Point(17, 17);
+            this.lbldCodigo.Location = new System.Drawing.Point(31, 17);
             this.lbldCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldCodigo.Name = "lbldCodigo";
-            this.lbldCodigo.Size = new System.Drawing.Size(335, 30);
+            this.lbldCodigo.Size = new System.Drawing.Size(171, 30);
             this.lbldCodigo.TabIndex = 46;
-            this.lbldCodigo.Text = "Usa este codigo para la presentacion:";
+            this.lbldCodigo.Text = "Codigo de ingreso:";
+            this.lbldCodigo.Click += new System.EventHandler(this.lbldCodigo_Click);
             // 
             // btnCargar
             // 
@@ -237,9 +247,30 @@ namespace TextoAbierto
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
-            // openFileDialog1
+            // lblMostrarPregunta
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.lblMostrarPregunta.AutoSize = true;
+            this.lblMostrarPregunta.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostrarPregunta.ForeColor = System.Drawing.Color.Transparent;
+            this.lblMostrarPregunta.Location = new System.Drawing.Point(48, 89);
+            this.lblMostrarPregunta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMostrarPregunta.Name = "lblMostrarPregunta";
+            this.lblMostrarPregunta.Size = new System.Drawing.Size(231, 35);
+            this.lblMostrarPregunta.TabIndex = 45;
+            this.lblMostrarPregunta.Text = "¿Cuál es su pregunta?";
+            // 
+            // lblMostrarDescripcion
+            // 
+            this.lblMostrarDescripcion.AutoSize = true;
+            this.lblMostrarDescripcion.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostrarDescripcion.ForeColor = System.Drawing.Color.Transparent;
+            this.lblMostrarDescripcion.Location = new System.Drawing.Point(48, 197);
+            this.lblMostrarDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMostrarDescripcion.Name = "lblMostrarDescripcion";
+            this.lblMostrarDescripcion.Size = new System.Drawing.Size(249, 35);
+            this.lblMostrarDescripcion.TabIndex = 49;
+            this.lblMostrarDescripcion.Text = "¿Cuál es la descripción?";
+            this.lblMostrarDescripcion.Click += new System.EventHandler(this.label2_Click);
             // 
             // TextoAbiertoCrear
             // 
@@ -263,10 +294,11 @@ namespace TextoAbierto
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TextoAbierto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TextoAbiertoCrear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.boxImagen)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxMostrarIm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,8 +318,10 @@ namespace TextoAbierto
         private System.Windows.Forms.TextBox lblCodigo;
         private System.Windows.Forms.Label lbldCodigo;
         private System.Windows.Forms.Label labelDes;
-        private System.Windows.Forms.PictureBox pictureBoxIm;
+        private System.Windows.Forms.PictureBox pictBoxMostrarIm;
         private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileImage;
+        private System.Windows.Forms.Label lblMostrarDescripcion;
+        private System.Windows.Forms.Label lblMostrarPregunta;
     }
 }

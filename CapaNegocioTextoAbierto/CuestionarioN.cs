@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatosTextoAbierto;
+//using CapaDatosTextoAbierto;
 using CapaEntidadesTextoAbierto;
 
 namespace CapaNegocioTextoAbierto
 {
-    public class CuestionarioN
+    /*public class CuestionarioN
     {
         private CuestionarioDatos cuestionarioD = new CuestionarioDatos();
        
@@ -26,9 +26,9 @@ namespace CapaNegocioTextoAbierto
                     cuestionarioD.Actualizar(cuestionario);
 
             }
-        }
+        }*/
 
-        public Cuestionario TraerPorId(int Id_Cuestionario)
+       /* public Cuestionario TraerPorId(int Id_Cuestionario)
         {
             stringBuilder.Clear();
 
@@ -39,9 +39,9 @@ namespace CapaNegocioTextoAbierto
                 return cuestionarioD.GetByid(Id_Cuestionario);
             }
             return null;
-        }
+        }*/
 
-        public void Eliminar(int Id_Cuestionario)
+       /* public void Eliminar(int Id_Cuestionario)
         {
             stringBuilder.Clear();
 
@@ -62,5 +62,5 @@ namespace CapaNegocioTextoAbierto
 
             return stringBuilder.Length == 0;
         }
-    }
+    }*/
 }

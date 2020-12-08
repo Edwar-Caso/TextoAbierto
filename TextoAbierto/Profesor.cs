@@ -7,6 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FireSharp.Interfaces;
+using System.IO;
+using System.Drawing.Imaging;
+using FireSharp.Response;
+using FireSharp.Config;
+using CapaEntidadesTextoAbierto;
 
 namespace TextoAbierto
 {
@@ -16,6 +22,13 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
+      /*  IFirebaseConfig fcon = new FirebaseConfig()
+        {
+            AuthSecret = "K4VmddybmsiaIJu9lm74lnZZop2jsHo2Wo3pwrbf",
+            BasePath = "https://textoabierto-ee6c6-default-rtdb.firebaseio.com/"
+        }; // Wilder Autrentificar la base de datos
+
+        IFirebaseClient client;*/
 
         private void cREARToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -31,9 +44,15 @@ namespace TextoAbierto
 
         private void pRESENTACIÒNToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //para presentar
+            /*var resultado = client.Get("Cuestionario/");
+            Cuestionario cuest = resultado.ResultAs<Cuestionario>();    */       
+
             TextoAbiertoPresentación frm = new TextoAbiertoPresentación();
             frm.MdiParent = this;
             frm.Show();
+
+            
         }
 
         private void rEPORTEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,6 +60,11 @@ namespace TextoAbierto
             TextoAbiertoReporte frm = new TextoAbiertoReporte();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void Profesor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

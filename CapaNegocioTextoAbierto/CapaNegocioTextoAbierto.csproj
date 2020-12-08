@@ -48,10 +48,6 @@
     <Compile Include="RespuestaN.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatosTextoAbierto\CapaDatosTextoAbierto.csproj">
-      <Project>{21dac1b8-1226-453f-bd6a-5452f0d73e9a}</Project>
-      <Name>CapaDatosTextoAbierto</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaEntidadesTextoAbierto\CapaEntidadesTextoAbierto.csproj">
       <Project>{a71bc25b-c62e-49a1-aca8-5dcdbeb9f94a}</Project>
       <Name>CapaEntidadesTextoAbierto</Name>

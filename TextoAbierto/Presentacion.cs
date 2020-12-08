@@ -63,5 +63,10 @@ namespace TextoAbierto
         {
             this.WindowState = FormWindowState.Maximized;
         }
+
+        private void Presentacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

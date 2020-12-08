@@ -1,4 +1,8 @@
-﻿using System;
+﻿using CapaEntidadesTextoAbierto;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +16,16 @@ namespace TextoAbierto
 {
     public partial class TextoAbiertoPresentación : Form
     {
+        DataTable dt = new DataTable();
+
+        IFirebaseConfig fcon = new FirebaseConfig()
+        {
+            AuthSecret = "FhXmCLLu1tunV9tTEFOlJmWsKs7Kc4mRDM3u4qJ4",
+            BasePath = "https://textoabierto-3fb1a-default-rtdb.firebaseio.com/"
+        }; // Wilder Autrentificar la base de datos
+
+        IFirebaseClient client;
+
         public TextoAbiertoPresentación()
         {
             InitializeComponent();
@@ -24,6 +38,7 @@ namespace TextoAbierto
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+           
             Presentacion frm = new Presentacion();
             frm.Show();
             this.WindowState = FormWindowState.Minimized;
@@ -72,6 +87,54 @@ namespace TextoAbierto
             TextoAbiertoReporte frm = new TextoAbiertoReporte();
             frm.Show();
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void TextoAbiertoPresentación_Load(object sender, EventArgs e)
+        {
+            dt.Columns.Add("ID");
+            dt.Columns.Add("CODIGO");
+            dt.Columns.Add("PREGUNTA");
+            dt.Columns.Add("DESCRIPCION");
+            dt.Columns.Add("IMAGEN");
+
+            dataGridViewPresentacion.DataSource = dt;
+
+            export();
+        }
+
+        private async void export()
+        {
+            int i = 0;
+            FirebaseResponse resp = await client.GetAsync("contador/nodo");
+            datosFirebase objeto = resp.ResultAs<datosFirebase>();
+
+            int cnt = Convert.ToInt32(objeto.cont);
+             while(true)
+                if (i == cnt)
+                {
+                    break;
+                }
+                i++;
+                try
+                {
+                    FirebaseResponse respues = await client.GetAsync("Cuestionario/" + i);
+                    Cuestionario objeto2 = respues.ResultAs<Cuestionario>();
+                    DataRow row = dt.NewRow();
+                    row["ID"] = objeto2.id;
+                    row["CODIGO"] = objeto2.numeroAleatorio;
+                    row["PREGUNTA"] = objeto2.pregunta;
+                    row["DESCRIPCION"] = objeto2.descripcion;
+                    row["IMAGEN"] = objeto2.imagen;
+
+                    dt.Rows.Add(row);
+                }
+                catch
+                {
+
+                }
+
+            MessageBox.Show("Listo");
+
         }
     }
 }

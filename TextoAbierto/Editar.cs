@@ -43,5 +43,10 @@ namespace TextoAbierto
         {
             this.Close();
         }
+
+        private void Editar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
