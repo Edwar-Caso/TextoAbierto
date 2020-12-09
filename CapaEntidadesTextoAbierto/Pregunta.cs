@@ -8,6 +8,7 @@ namespace CapaEntidadesTextoAbierto
 {
     public class Pregunta
     {
+        //creacion de las variables para el almacenamiento de los datos de acuerdo a la base datos
         public int IdPregunta { get; set; }
         public string pregunta { get; set; }
         public string descripcion { get; set; }
