@@ -22,7 +22,9 @@ namespace TextoAbierto
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Autentificacion de la base de datos en la nube, con FireBase
+        /// </summary>
         IFirebaseConfig fcon = new FirebaseConfig()
         {
             AuthSecret = "FhXmCLLu1tunV9tTEFOlJmWsKs7Kc4mRDM3u4qJ4",
@@ -30,11 +32,13 @@ namespace TextoAbierto
         }; // Wilder Autrentificar la base de datos
 
         IFirebaseClient client;
+
+        //Evento click para cerrar la aplicacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        //Evento click para minimizar la ventana del formulario
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
