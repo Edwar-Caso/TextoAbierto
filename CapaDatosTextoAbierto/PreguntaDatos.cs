@@ -9,22 +9,23 @@ using CapaEntidadesTextoAbierto;
 
 namespace CapaDatosTextoAbierto
 {
-    public class CuestionarioDatos
+    public class PreguntaDatos
     {
-        public void Insertar(Cuestionario Dcuestionario)
+        public void Insertar(Pregunta DPregunta)
         {
             using (SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["cnnString"].ToString()))
             {
                 cnx.Open();
                 const string sqlQuery =
-                    "INSERT INTO Cuestionario (Id_Cuestionario, pregunta, descripcion, imagen) VALUES (@Id_Cuestionario, @pregunta, @descripcion, @imagen)";
+                    "INSERT INTO tblPregunta (IDPregunta, Pregunta, Descripcion, Imagen, IDProfesor) VALUES (@IDPregunta, @Pregunta, @Descripcion, @Imagen, @IDProfesor)";
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, cnx))
                 {
               
-                    cmd.Parameters.AddWithValue("@Id_Cuestionario", Dcuestionario.Id_Cuestionario);
-                    cmd.Parameters.AddWithValue("@pregunta", Dcuestionario.pregunta);
-                    cmd.Parameters.AddWithValue("@descripcion", Dcuestionario.descripcion);
-                    cmd.Parameters.AddWithValue("@imagen", Dcuestionario.imagen);
+                    cmd.Parameters.AddWithValue("@IDPregunta", DPregunta.IdProfesor);
+                    cmd.Parameters.AddWithValue("@Pregunta", DPregunta.pregunta);
+                    cmd.Parameters.AddWithValue("@Descripcion", DPregunta.descripcion);
+                    cmd.Parameters.AddWithValue("@Imagen", DPregunta.imagen);
+                    cmd.Parameters.AddWithValue("@IDProfesor", DPregunta.IdProfesor);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -33,19 +34,20 @@ namespace CapaDatosTextoAbierto
 
         }
 
-        public void Actualizar(Cuestionario Dcuestionario)
+        public void Actualizar(Pregunta DPregunta)
         {
             using (SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["cnnString"].ToString()))
             {
                 cnx.Open();
                 const string sqlQuery =
-                    "UPDATE Cuestionario SET pregunta = @pregunta, Descripcion = @descripcion, imagen = @imagen WHERE Id_Cuestionario = @Id_Cuestionario";
+                    "UPDATE tblPregunta SET Pregunta = @pregunta, Descripcion = @descripcion, imagen = @imagen, IDProfesor = @IDProfesor WHERE IDPregunta = @IDPregunta";
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, cnx))
                 {
-                    cmd.Parameters.AddWithValue("@Id_Cuestionario", Dcuestionario.Id_Cuestionario);
-                    cmd.Parameters.AddWithValue("@pregunta", Dcuestionario.pregunta);
-                    cmd.Parameters.AddWithValue("@descripcion", Dcuestionario.descripcion);
-                    cmd.Parameters.AddWithValue("@imagen", Dcuestionario.imagen); 
+                    cmd.Parameters.AddWithValue("@IDPregunta", DPregunta.IdProfesor);
+                    cmd.Parameters.AddWithValue("@Pregunta", DPregunta.pregunta);
+                    cmd.Parameters.AddWithValue("@Descripcion", DPregunta.descripcion);
+                    cmd.Parameters.AddWithValue("@Imagen", DPregunta.imagen);
+                    cmd.Parameters.AddWithValue("@IDProfesor", DPregunta.IdProfesor);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -54,15 +56,15 @@ namespace CapaDatosTextoAbierto
 
         }
 
-        public void Eliminar(int Id_Cuestionario)
+        public void Eliminar(int IdPregunta)
         {
             using (SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["cnnString"].ToString()))
             {
                 cnx.Open();
-                const string sqlQuery = "DELETE FROM Cuestionario WHERE Id_Cuestionario = @Id_Cuestionario";
+                const string sqlQuery = "DELETE FROM tblPregunta WHERE IDPregunta = @IDPregunta";
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, cnx))
                 {
-                    cmd.Parameters.AddWithValue("@Id_Cuestionario", Id_Cuestionario);
+                    cmd.Parameters.AddWithValue("@IDPregunta", IdPregunta);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -71,29 +73,30 @@ namespace CapaDatosTextoAbierto
 
         }
 
-        public Cuestionario GetByid(int Id_Cuestionario)
+        public Pregunta GetByid(int IdPregunta)
         {
             using (SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["cnnString"].ToString()))
             {
                 cnx.Open();
 
-                const string sqlGetById = "SELECT * FROM Cuestionario WHERE Id_Cuestionario = @Id_Cuestionario";
+                const string sqlGetById = "SELECT * FROM tblPregunta WHERE IDPregunta = @IDPregunta";
                 using (SqlCommand cmd = new SqlCommand(sqlGetById, cnx))
                 {
                    
-                    cmd.Parameters.AddWithValue("@Id_Cuestionario", Id_Cuestionario);
+                    cmd.Parameters.AddWithValue("@IDPregunta", IdPregunta);
                     SqlDataReader dataReader = cmd.ExecuteReader();
                     if (dataReader.Read())
                     {
-                        Cuestionario Lcuestionario = new Cuestionario
+                        Pregunta LPregunta = new Pregunta
                         {
-                            Id_Cuestionario = Convert.ToInt32(dataReader["Id_Cuestionario"]),
+                            IdPregunta = Convert.ToInt32(dataReader["IDPregunta"]),
                             pregunta = Convert.ToString(dataReader["pregunta"]),
                             descripcion = Convert.ToString(dataReader["descripcion"]),
-                            imagen = Convert.ToByte(dataReader["Precio"])
+                            imagen = Convert.ToByte(dataReader["Imagen"]),
+                            IdProfesor = Convert.ToInt32(dataReader["Profesor"])
                         };
 
-                        return Lcuestionario;
+                        return LPregunta;
                     }
                 }
             }
