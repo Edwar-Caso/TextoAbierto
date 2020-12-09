@@ -99,13 +99,13 @@ namespace TextoAbierto
 
             dataGridViewPresentacion.DataSource = dt;
 
-            export();
         }
 
-        private async void export()
+        private async Task export()
         {
             int i = 0;
             FirebaseResponse resp = await client.GetAsync("contador/nodo");
+   
             datosFirebase objeto = resp.ResultAs<datosFirebase>();
 
             int cnt = Convert.ToInt32(objeto.cont);
